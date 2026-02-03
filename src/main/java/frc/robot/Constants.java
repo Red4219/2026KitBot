@@ -18,10 +18,10 @@ public final class Constants {
   }
 
   public static class DriveConstants {
-    public static final int kLeftDriveMotorID = 2;
-    public static final int kLeftFollowerDriveMotorID = 4;
-    public static final int kRightDriveMotorID = 1;
-    public static final int kRightFollowerDriveMotorID = 3;
+    public static final int kLeftDriveMotorID = 1;
+    public static final int kLeftFollowerDriveMotorID = 2;
+    public static final int kRightDriveMotorID = 3;
+    public static final int kRightFollowerDriveMotorID = 4;
 
     public static final double kDriveSpeedPercent = 0.8;
     public static final double kRotationSpeedPercent = 0.4;
@@ -29,8 +29,8 @@ public final class Constants {
   }
 
   public static class ShooterConstants {
-    public static final int kIntakeMotorID = 5;
-    public static final int kFlywheelMotorID = 7;
+    public static final int kIntakeMotorID = 7;
+    public static final int kFlywheelMotorID = 5;
 
     public static final boolean kInvertIntake = true;
     public static final boolean kInvertFlywheel = true;
@@ -38,7 +38,9 @@ public final class Constants {
     public static final double kFlywheelShootPercent = 1;
     public static final double kIntakeIntakingPercent = 1;
     public static final double kIntakeOuttakingPercent = -1;
-    public static final double kFlywheelReversePercent = -1;
+    public static final double kFlywheelReversePercent = -0.8;
+    public static final double kFlywheelIntakingPercent = 1;
+    public static final double kFlywheelOuttakingPercent = -1;
 
     public static enum ShooterState{
       SHOOT,

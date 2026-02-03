@@ -7,6 +7,9 @@ package frc.robot;
 import frc.robot.Constants.OperatorConstants;
 import frc.robot.commands.Autos;
 import frc.robot.commands.ExampleCommand;
+import frc.robot.commands.IntakeCommand;
+import frc.robot.commands.OuttakeCommand;
+import frc.robot.commands.ShootCommand;
 import frc.robot.subsystems.DriveSubsystem;
 import frc.robot.subsystems.ExampleSubsystem;
 import frc.robot.subsystems.ShooterSubsystem;
@@ -50,8 +53,17 @@ public class RobotContainer {
    */
   private void configureBindings() {
     // Schedule `ExampleCommand` when `exampleCondition` changes to `true`
-    new Trigger(m_driverController.rightTrigger())
-        .whileTrue(new ExampleCommand(m_exampleSubsystem));
+    // new Trigger(m_driverController.rightTrigger())
+    //     .whileTrue(new ExampleCommand(m_exampleSubsystem));
+
+      new Trigger(m_driverController.rightTrigger())
+        .whileTrue(new ShootCommand(m_shooterSubsystem));
+      
+      new Trigger(m_driverController.rightBumper())
+        .whileTrue(new IntakeCommand(m_shooterSubsystem));
+
+      new Trigger(m_driverController.button(4))
+        .whileTrue(new OuttakeCommand(m_shooterSubsystem));
 
     m_driveSubsystem.setDefaultCommand(new RunCommand(() -> m_driveSubsystem.drive(m_driverController.getLeftY(), m_driverController.getRightX()), m_driveSubsystem));
     

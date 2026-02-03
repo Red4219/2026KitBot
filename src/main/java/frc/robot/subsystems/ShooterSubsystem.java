@@ -107,14 +107,14 @@ public class ShooterSubsystem extends SubsystemBase {
     switch (this.state) {
       case SHOOT:
         flywheelSpeed = ShooterConstants.kFlywheelShootPercent;
-        intakeSpeed = ShooterConstants.kIntakeIntakingPercent;
+        intakeSpeed = ShooterConstants.kIntakeOuttakingPercent;
         break;
       case INTAKE:
-        flywheelSpeed = ShooterConstants.kFlywheelReversePercent;
+        flywheelSpeed = ShooterConstants.kFlywheelIntakingPercent;
         intakeSpeed = ShooterConstants.kIntakeIntakingPercent;
         break;
       case OUTTAKE:
-        flywheelSpeed = ShooterConstants.kFlywheelShootPercent;
+        flywheelSpeed = ShooterConstants.kFlywheelOuttakingPercent;
         intakeSpeed = ShooterConstants.kIntakeOuttakingPercent;
         break;
       case IDLE:

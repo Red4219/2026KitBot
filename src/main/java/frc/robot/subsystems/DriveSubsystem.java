@@ -46,7 +46,9 @@ public class DriveSubsystem extends SubsystemBase {
     m_rightFolMotor.follow(m_rightMotor);
 
     m_leftMotor.setInverted(true);
+    m_leftFolMotor.setInverted(true);
     m_rightMotor.setInverted(false);
+    m_rightFolMotor.setInverted(false);
 
     if (isSim){
       m_leftSimMotor = m_leftMotor.getSimCollection();  
@@ -100,7 +102,7 @@ public class DriveSubsystem extends SubsystemBase {
    * @param x pass the x value of the Right joystick- for rotational driving.
    */
   public void drive(double y, double x){
-    leftSpeed = y * DriveConstants.kDriveSpeedPercent + x * DriveConstants.kRotationSpeedPercent;
     leftSpeed = y * DriveConstants.kDriveSpeedPercent - x * DriveConstants.kRotationSpeedPercent;
+    rightSpeed = y * DriveConstants.kDriveSpeedPercent + x * DriveConstants.kRotationSpeedPercent;
   }
 }
